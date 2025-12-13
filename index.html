@@ -1,0 +1,443 @@
+<html lang="en" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daleel Labs - Human Intelligence, Automated</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <!-- Importing Inter for UI and Crimson Pro for the "Human" touches -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* This class applies Crimson Pro */
+        .font-human {
+            font-family: 'Crimson Pro', serif;
+        }
+        
+        /* Custom scrollbar for the guide container */
+        .guide-scroll::-webkit-scrollbar {
+            width: 4px;
+        }
+        .guide-scroll::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .guide-scroll::-webkit-scrollbar-thumb {
+            background-color: #e2e8f0;
+            border-radius: 20px;
+        }
+
+        /* Custom Toggle Switch Logic */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #4f46e5;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #4f46e5;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .animation-delay-2000 { animation-delay: 2s; }
+    </style>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style></head>
+<body class="bg-white text-zinc-800 antialiased selection:bg-indigo-100 selection:text-indigo-900">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-zinc-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-lg tracking-tighter font-semibold text-zinc-900 flex items-center gap-2 group">
+                <div class="w-6 h-6 bg-indigo-600 rounded-lg flex items-center justify-center text-white shadow-indigo-200 shadow-sm transform group-hover:-rotate-6 transition-transform duration-300">
+                    <span class="font-bold text-[10px]">D</span>
+                </div>
+                DALEEL LABS
+            </a>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-500">
+                <a href="#problem" class="hover:text-indigo-600 transition-colors">The Problem</a>
+                <a href="#services" class="hover:text-indigo-600 transition-colors">Services</a>
+                <a href="#methodology" class="hover:text-indigo-600 transition-colors">Methodology</a>
+            </div>
+            <a href="#" class="hidden md:inline-flex items-center justify-center px-4 py-2 text-xs font-medium text-white bg-zinc-900 rounded-full hover:bg-zinc-800 transition-all shadow-lg shadow-zinc-200 hover:shadow-zinc-300 hover:-translate-y-0.5">
+                Book Consultation
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Layout: Grid with Sticky Sidebar -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 lg:gap-20 max-w-7xl mr-auto ml-auto pt-32 pr-6 pb-24 pl-6 gap-x-12 gap-y-12">
+        
+        <!-- Left Content Column -->
+        <main class="lg:col-span-7 flex flex-col gap-24">
+            
+            <!-- Hero Section -->
+            <section class="animate-fade-in relative">
+                <!-- Background decorative blobs -->
+                <div class="absolute -top-20 -left-20 w-96 h-96 bg-indigo-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob"></div>
+                <div class="absolute -top-20 left-40 w-96 h-96 bg-amber-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50 animate-blob animation-delay-2000"></div>
+
+                <div class="relative">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-indigo-100 text-xs font-medium text-indigo-600 mb-8 shadow-sm">
+                        <span class="relative flex h-2 w-2">
+                          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                          <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                        </span>
+                        New: Q4 Partner Openings
+                    </div>
+                    <!-- The font-human class applies Crimson Pro here -->
+                    <h1 class="sm:text-7xl lg:text-8xl leading-[1] text-6xl font-medium text-zinc-900 tracking-tight font-human mb-8">Intelligence, <span class="text-zinc-400 italic">simplified.</span></h1>
+                    <p class="text-xl text-zinc-500 leading-relaxed max-w-xl font-normal">
+                        We architect automated workflows and AI agents that handle the busywork, so your team can focus on the <span class="text-indigo-600 font-medium bg-indigo-50 px-1 rounded">breakthrough work</span>.
+                    </p>
+                    <div class="mt-10 flex flex-wrap gap-4">
+                        <button class="px-6 py-3 bg-indigo-600 text-white rounded-xl text-sm font-medium hover:bg-indigo-700 transition-all flex items-center gap-2 shadow-xl shadow-indigo-200 hover:shadow-indigo-300 hover:-translate-y-0.5">
+                            Start Automating
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide" width="16" height="16" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:arrow-right" data-width="16"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7l7 7l-7 7"></path></svg>
+                        </button>
+                        <button class="px-6 py-3 bg-white border border-zinc-200 text-zinc-600 rounded-xl text-sm font-medium hover:bg-zinc-50 transition-all hover:border-zinc-300">
+                            View Case Studies
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- The Problem Section (Human Terms) -->
+            <section id="problem" class="animate-fade-in delay-100 pt-10">
+                <h2 class="font-human text-4xl sm:text-5xl text-zinc-900 mb-8 leading-tight">
+                    We hired humans, 
+                    <span class="italic text-zinc-400">not robots.</span>
+                </h2>
+                
+                <div class="prose prose-lg text-zinc-500 mb-12">
+                    <p>
+                        Somewhere along the way, work stopped being about creativity and problem-solving, and became about moving data from Tab A to Tab B.
+                    </p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Pain Point 1 -->
+                    <div class="flex items-start gap-5 p-5 rounded-2xl hover:bg-zinc-50 transition-colors -mx-5 border border-transparent hover:border-zinc-100 group">
+                        <div class="w-10 h-10 shrink-0 bg-red-50 text-red-500 rounded-full flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:copy" data-width="20" data-stroke-width="2"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></g></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-human text-xl text-zinc-900 mb-1 group-hover:text-red-600 transition-colors">The "Copy-Paste" Purgatory</h3>
+                            <p class="text-sm text-zinc-500 leading-relaxed">
+                                Your smartest people are spending hours manually reformatting spreadsheets and syncing data between tools that should already talk to each other. It's boring, and frankly, beneath them.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pain Point 2 -->
+                    <div class="flex items-start gap-5 p-5 rounded-2xl hover:bg-zinc-50 transition-colors -mx-5 border border-transparent hover:border-zinc-100 group">
+                        <div class="w-10 h-10 shrink-0 bg-orange-50 text-orange-500 rounded-full flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:search" data-width="20" data-stroke-width="2"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m21 21l-4.34-4.34"></path><circle cx="11" cy="11" r="8"></circle></g></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-human text-xl text-zinc-900 mb-1 group-hover:text-orange-600 transition-colors">The Scavenger Hunt</h3>
+                            <p class="text-sm text-zinc-500 leading-relaxed">
+                                "Is this the latest version?" "Where did you save that PDF?" "Did you check Slack?" The mental energy wasted just  the work is often greater than the work itself.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pain Point 3 -->
+                    <div class="flex items-start gap-5 p-5 rounded-2xl hover:bg-zinc-50 transition-colors -mx-5 border border-transparent hover:border-zinc-100 group">
+                        <div class="w-10 h-10 shrink-0 bg-zinc-100 text-zinc-600 rounded-full flex items-center justify-center mt-1 group-hover:scale-110 transition-transform duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:battery-warning" data-width="20" data-stroke-width="2"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 17h.01M10 7v6m4-7h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2m8-4v-4M6 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2"></path></svg>
+                        </div>
+                        <div>
+                            <h3 class="font-human text-xl text-zinc-900 mb-1 group-hover:text-zinc-800 transition-colors">Context Switching Burnout</h3>
+                            <p class="text-sm text-zinc-500 leading-relaxed">
+                                Every time a notification pings or you switch apps, your brain loses focus. By 3 PM, your team is exhausted, not because they solved hard problems, but because they juggled too many small ones.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services / Solutions -->
+            <section id="services" class="animate-fade-in delay-200 border-t border-zinc-100 pt-24">
+                <h2 class="font-human text-4xl text-zinc-900 mb-10">Our Core Capabilities</h2>
+                <div class="grid grid-cols-1 gap-6">
+                    <!-- Card 1 -->
+                    <div class="group p-8 bg-white border border-zinc-200 rounded-3xl shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-xl hover:shadow-indigo-100/40 hover:border-indigo-100 transition-all duration-300 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-50/50 to-transparent rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+                        
+                        <div class="w-12 h-12 bg-indigo-50 text-indigo-600 rounded-2xl flex items-center justify-center mb-6 border border-indigo-100 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:workflow" data-width="24" data-stroke-width="1.5"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="8" height="8" x="3" y="3" rx="2"></rect><path d="M7 11v4a2 2 0 0 0 2 2h4"></path><rect width="8" height="8" x="13" y="13" rx="2"></rect></g></svg>
+                        </div>
+                        <h3 class="text-lg font-medium text-zinc-900 mb-3 tracking-tight group-hover:text-indigo-600 transition-colors">Workflow Orchestration</h3>
+                        <p class="text-sm text-zinc-500 leading-relaxed relative z-10">
+                            Connecting your disparate tools (CRM, ERP, Slack) into a seamless, event-driven ecosystem. Data flows automatically where it's needed, when it's needed.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="group p-8 bg-white border border-zinc-200 rounded-3xl shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-xl hover:shadow-amber-100/40 hover:border-amber-100 transition-all duration-300 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-50/50 to-transparent rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+
+                        <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-2xl flex items-center justify-center mb-6 border border-amber-100 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:brain-circuit" data-width="24" data-stroke-width="1.5"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12 5a3 3 0 1 0-5.997.125a4 4 0 0 0-2.526 5.77a4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"></path><path d="M9 13a4.5 4.5 0 0 0 3-4M6.003 5.125A3 3 0 0 0 6.401 6.5m-2.924 4.396a4 4 0 0 1 .585-.396M6 18a4 4 0 0 1-1.967-.516M12 13h4m-4 5h6a2 2 0 0 1 2 2v1M12 8h8m-4 0V5a2 2 0 0 1 2-2"></path><circle cx="16" cy="13" r=".5"></circle><circle cx="18" cy="3" r=".5"></circle><circle cx="20" cy="21" r=".5"></circle><circle cx="20" cy="8" r=".5"></circle></g></svg>
+                        </div>
+                        <h3 class="text-lg font-medium text-zinc-900 mb-3 tracking-tight group-hover:text-amber-600 transition-colors">Custom AI Agents</h3>
+                        <p class="text-sm text-zinc-500 leading-relaxed relative z-10">
+                            Deploying specialized LLMs trained on your company data to handle customer support, internal knowledge retrieval, and document analysis.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="group p-8 bg-white border border-zinc-200 rounded-3xl shadow-[0_2px_8px_rgba(0,0,0,0.02)] hover:shadow-xl hover:shadow-teal-100/40 hover:border-teal-100 transition-all duration-300 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-teal-50/50 to-transparent rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-110"></div>
+
+                        <div class="w-12 h-12 bg-teal-50 text-teal-600 rounded-2xl flex items-center justify-center mb-6 border border-teal-100 group-hover:scale-110 group-hover:bg-teal-500 group-hover:text-white transition-all duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide" width="24" height="24" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:bar-chart-3" data-width="24" data-stroke-width="1.5"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3v18h18m-3-4V9m-5 8V5M8 17v-3"></path></svg>
+                        </div>
+                        <h3 class="text-lg font-medium text-zinc-900 mb-3 tracking-tight group-hover:text-teal-600 transition-colors">Predictive Analytics</h3>
+                        <p class="text-sm text-zinc-500 leading-relaxed relative z-10">
+                            Turning static spreadsheets into dynamic dashboards that forecast trends and alert you to anomalies before they become problems.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Interactive Toggle Section -->
+            <section class="animate-fade-in delay-300 border-t border-zinc-100 pt-24">
+                 <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
+                    <div>
+                        <h2 class="font-human text-4xl text-zinc-900">Efficiency Calculator</h2>
+                        <p class="text-zinc-500 text-sm mt-2">Estimate your weekly time savings.</p>
+                    </div>
+                 </div>
+
+                 <div class="bg-zinc-900 text-zinc-100 rounded-[2rem] p-8 md:p-12 relative overflow-hidden shadow-2xl shadow-zinc-200 group">
+                    <div class="absolute top-0 right-0 p-40 bg-indigo-900 rounded-full blur-3xl opacity-40 transform translate-x-1/3 -translate-y-1/3 group-hover:opacity-50 transition-opacity duration-1000"></div>
+                    <div class="absolute bottom-0 left-0 p-32 bg-indigo-600 rounded-full blur-3xl opacity-20 transform -translate-x-1/2 translate-y-1/3 group-hover:opacity-30 transition-opacity duration-1000"></div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative z-10">
+                        <div class="space-y-10">
+                            <!-- Custom Slider 1 -->
+                            <div>
+                                <div class="flex justify-between text-xs font-medium text-zinc-400 mb-3">
+                                    <span>Team Size</span>
+                                    <span class="text-white">12 people</span>
+                                </div>
+                                <div class="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden cursor-pointer">
+                                    <div class="h-full w-[40%] bg-gradient-to-r from-indigo-500 to-white rounded-full relative shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Custom Slider 2 -->
+                            <div>
+                                <div class="flex justify-between text-xs font-medium text-zinc-400 mb-3">
+                                    <span>Manual Tasks / Week</span>
+                                    <span class="text-white">25 hours</span>
+                                </div>
+                                <div class="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden cursor-pointer">
+                                    <div class="h-full w-[65%] bg-gradient-to-r from-indigo-500 to-white rounded-full relative shadow-[0_0_10px_rgba(255,255,255,0.5)]">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Custom Toggle -->
+                            <div class="flex items-center justify-between pt-2">
+                                <span class="text-sm text-zinc-300 font-medium">Include AI Analysis?</span>
+                                <div class="relative inline-block w-12 h-7 align-middle select-none transition duration-200 ease-in">
+                                    <input type="checkbox" name="toggle" id="toggle" class="toggle-checkbox absolute block w-5 h-5 rounded-full bg-white border-4 appearance-none cursor-pointer translate-x-1 translate-y-1 transition-all duration-300" checked="">
+                                    <label for="toggle" class="toggle-label block overflow-hidden h-7 rounded-full bg-zinc-700 cursor-pointer transition-colors duration-300"></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col justify-center items-center md:items-end text-center md:text-right">
+                            <span class="text-indigo-300 text-sm font-medium mb-1 uppercase tracking-wider">Projected Savings</span>
+                            <span class="text-6xl font-medium tracking-tighter text-white drop-shadow-lg">$142k</span>
+                            <span class="text-emerald-400 text-xs mt-4 flex items-center gap-1.5 bg-emerald-400/10 px-3 py-1.5 rounded-full border border-emerald-400/20">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:trending-up"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 7h6v6"></path><path d="m22 7l-8.5 8.5l-5-5L2 17"></path></g></svg>
+                                +320 hours reclaimed
+                            </span>
+                        </div>
+                    </div>
+                 </div>
+            </section>
+            
+            <!-- Footer Content -->
+            <footer class="pt-24 pb-10 border-t border-zinc-100">
+                <div class="flex flex-col md:flex-row justify-between gap-8">
+                    <div>
+                        <p class="text-lg font-medium tracking-tight text-zinc-900 flex items-center gap-2">
+                            <span class="w-4 h-4 bg-zinc-900 rounded-sm transform rotate-45"></span> Daleel Labs
+                        </p>
+                        <p class="text-sm text-zinc-500 mt-4">\'a9 2024 Daleel Labs.</p>
+                    </div>
+                    <div class="flex gap-8 text-sm text-zinc-500 font-medium">
+                        <a href="#" class="hover:text-indigo-600 transition-colors">Privacy</a>
+                        <a href="#" class="hover:text-indigo-600 transition-colors">Terms</a>
+                        <a href="#" class="hover:text-indigo-600 transition-colors">Twitter</a>
+                    </div>
+                </div>
+            </footer>
+
+        </main>
+
+        <!-- Right Column: Sticky "Human" Guide -->
+        <aside class="hidden lg:block lg:col-span-5 relative">
+            <div class="sticky top-32 h-[calc(100vh-8rem)] flex flex-col">
+                
+                <!-- Sticker Header -->
+                <div class="relative z-10 -mb-5 ml-2 transition-transform hover:-translate-y-1 duration-300">
+                     <div class="inline-block bg-[#FACC15] text-black px-6 py-3 font-bold uppercase tracking-tighter transform -rotate-2 shadow-lg border-2 border-black/5 text-sm sm:text-base">
+                        Wait, what does that mean?
+                     </div>
+                </div>
+
+                <!-- Guide Container -->
+                <div class="bg-white border border-zinc-200 rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col overflow-hidden h-full pt-8 relative">
+                    
+                    <!-- Decorative Tape -->
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 h-8 bg-yellow-100/50 opacity-50 rotate-1 blur-[1px]"></div>
+
+                    <!-- Intro Persona -->
+                    <div class="px-8 pb-6 border-b border-zinc-50">
+                        <div class="flex gap-4 items-center">
+                            <div class="relative group">
+                                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&amp;fit=crop&amp;w=64&amp;h=64" alt="Sarah" class="w-12 h-12 rounded-full object-cover ring-4 ring-white shadow-md grayscale group-hover:grayscale-0 transition-all duration-500">
+                                <div class="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 border-2 border-white rounded-full flex items-center justify-center animate-pulse">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide text-white text-[10px]" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:check"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 6L9 17l-5-5"></path></svg>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold text-zinc-900">Sarah from Ops</p>
+                                <p class="text-xs text-zinc-500 font-medium">Human Translator \'95 Online</p>
+                            </div>
+                        </div>
+                        <div class="mt-4 bg-zinc-50 p-4 rounded-xl rounded-tl-none border border-zinc-100 relative">
+                             <div class="absolute -top-1.5 -left-1.5 w-3 h-3 bg-white border-l border-t border-zinc-100 transform rotate-45"></div>
+                             <p class="leading-snug text-lg italic text-zinc-600 font-human">
+                                "Tech jargon is the worst. I'm hanging out here to translate the fancy words into plain English as you scroll."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Scrollable Terms Feed -->
+                    <div class="flex-1 overflow-y-auto p-6 space-y-10 guide-scroll bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] bg-fixed">
+                        
+                        <!-- Term 1 -->
+                        <div class="group">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-zinc-400 bg-zinc-100 px-2 py-1 rounded">Buzzword</span>
+                                <span class="text-xs font-bold text-zinc-900 tracking-tight">LARGE LANGUAGE MODEL</span>
+                            </div>
+                            <div class="relative bg-[#FEFCE8] p-5 rounded-xl border border-yellow-100 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:-translate-y-1">
+                                <div class="absolute -left-2 top-4 w-4 h-4 bg-[#FEFCE8] border-l border-b border-yellow-100 transform rotate-45"></div>
+                                <p class="font-human text-xl text-zinc-800 italic leading-relaxed">
+                                    "Think of it as a really, <span class="bg-yellow-200/60 px-1 rounded-sm">really well-read autocomplete</span>."
+                                </p>
+                                <div class="mt-3 flex items-start gap-2 pt-3 border-t border-yellow-200/50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide text-yellow-600 mt-0.5 shrink-0" width="14" height="14" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:info" data-width="14"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4m0-4h.01"></path></g></svg>
+                                    <p class="text-xs text-zinc-600 font-medium">It predicts the next best word to draft emails or summarize docs based on everything it's ever read.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Term 2 -->
+                        <div class="group">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-zinc-400 bg-zinc-100 px-2 py-1 rounded">Buzzword</span>
+                                <span class="text-xs font-bold text-zinc-900 tracking-tight">API INTEGRATION</span>
+                            </div>
+                            <div class="relative bg-indigo-50/50 p-5 rounded-xl border border-indigo-100 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:-translate-y-1">
+                                <div class="absolute -left-2 top-4 w-4 h-4 bg-indigo-50/50 border-l border-b border-indigo-100 transform rotate-45"></div>
+                                <p class="font-human text-xl text-zinc-800 italic leading-relaxed">
+                                    "Basically a <span class="bg-indigo-100 px-1 rounded-sm text-indigo-900">digital handshake</span>."
+                                </p>
+                                <div class="mt-3 flex items-start gap-2 pt-3 border-t border-indigo-200/50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide text-indigo-500 mt-0.5 shrink-0" width="14" height="14" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:link" data-width="14"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></g></svg>
+                                    <p class="text-xs text-zinc-600 font-medium">It lets two apps (like Slack and Excel) talk and swap data without you copy-pasting anything.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Term 3 -->
+                        <div class="group">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-zinc-400 bg-zinc-100 px-2 py-1 rounded">Buzzword</span>
+                                <span class="text-xs font-bold text-zinc-900 tracking-tight">R.A.G.</span>
+                            </div>
+                            <div class="relative bg-[#FEFCE8] p-5 rounded-xl border border-yellow-100 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:-translate-y-1">
+                                <div class="absolute -left-2 top-4 w-4 h-4 bg-[#FEFCE8] border-l border-b border-yellow-100 transform rotate-45"></div>
+                                <p class="font-human text-xl text-zinc-800 italic leading-relaxed">
+                                    "Giving the AI an <span class="bg-yellow-200/60 px-1 rounded-sm">open-book test</span>."
+                                </p>
+                                <div class="mt-3 flex items-start gap-2 pt-3 border-t border-yellow-200/50">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide text-yellow-600 mt-0.5 shrink-0" width="14" height="14" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:book-open" data-width="14"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7v14m-9-3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3z"></path></svg>
+                                    <p class="text-xs text-zinc-600 font-medium">Instead of guessing, we let it look up answers in your actual company PDFs before answering.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                         <!-- Term 4 -->
+                         <div class="group">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="font-mono text-[10px] uppercase tracking-wider text-zinc-400 bg-zinc-100 px-2 py-1 rounded">Buzzword</span>
+                                <span class="text-xs font-bold text-zinc-900 tracking-tight">HUMAN-IN-THE-LOOP</span>
+                            </div>
+                            <div class="relative bg-zinc-50 p-5 rounded-xl border border-zinc-200 shadow-sm group-hover:shadow-md transition-all duration-300 group-hover:-translate-y-1">
+                                <div class="absolute -left-2 top-4 w-4 h-4 bg-zinc-50 border-l border-b border-zinc-200 transform rotate-45"></div>
+                                <p class="font-human text-xl text-zinc-800 italic leading-relaxed">
+                                    "A <span class="border-b-2 border-indigo-400">safety net</span>."
+                                </p>
+                                <div class="mt-3 flex items-start gap-2 pt-3 border-t border-zinc-200">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide text-zinc-400 mt-0.5 shrink-0" width="14" height="14" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:shield-check" data-width="14"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12l2 2l4-4"></path></g></svg>
+                                    <p class="text-xs text-zinc-600 font-medium">The bot does 90% of the work, but waits for you to click "Approve" before sending that big invoice.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer doodle -->
+                        <div class="text-center py-4 opacity-30">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide inline-block text-zinc-400 animate-bounce" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:chevrons-down"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 6l5 5l5-5M7 13l5 5l5-5"></path></svg>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Mobile-only Guide Hint -->
+        <div class="lg:hidden fixed bottom-6 right-6 z-50">
+            <button class="bg-indigo-600 text-white rounded-full px-6 py-4 shadow-xl shadow-indigo-600/30 flex items-center gap-3 transform hover:scale-105 active:scale-95 transition-transform border border-indigo-500">
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--lucide" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" data-icon="lucide:message-circle" data-width="20"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092a10 10 0 1 0-4.777-4.719"></path></svg>
+                <span class="text-sm font-bold">Ask Sarah</span>
+            </button>
+        </div>
+
+    </div>
+
+</body></html>
