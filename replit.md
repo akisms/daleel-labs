@@ -16,7 +16,7 @@ A static landing page website for Daleel Labs - a company offering AI automation
 - Python 3.11 (for static file serving)
 
 ## Running the Project
-The project runs on port 5000 using Python's built-in HTTP server:
+The project runs on port 5001 using Python's built-in HTTP server:
 ```bash
 python server.py
 ```
